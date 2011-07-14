@@ -1,0 +1,18 @@
+<h2>Reset Password</h2>
+
+<% form_tag do %>
+  <%= hidden_field_tag :token, params[:token] %>
+  <h3>Please select a new password of your choice and enter it twice below</h3>
+  <p>
+    <label>Password:</label>
+    <%= password_field_tag :new_password, params[:new_password], :autocomplete => "off" %>
+  </p>
+  <p>
+    <label>Confirmation:</label>
+    <%= password_field_tag :password_confirmation, params[:password_confirmation], :autocomplete => "off" %>
+  </p>
+  
+  <p class="forgot">
+    <%= image_submit_tag("login/enter.gif") %>
+  </p>
+<% end %>
